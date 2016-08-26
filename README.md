@@ -39,14 +39,17 @@ Edit `config/jstrans.php`, add translations you wish to use in javascript:
 
 ```php
 return [
-    'validation',
+    // array of files to add to jstrans.js
+    'lang_files'   => ['validation'],
+    //save js file to public/js/jstrans.js
+    'js_file' => public_path('js/'),
 ];
 ```
 
 Include this script in your views before your javascript files:
 
 ```html
-<script src="/vendor/misterpaladin/jstrans/js/jstrans.js" type="text/javascript"></script>
+<script src="/js/jstrans.js" type="text/javascript"></script>
 ```
 
 And use it in your javascript like Laravel's `trans()` function:

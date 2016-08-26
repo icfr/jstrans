@@ -2,8 +2,8 @@ var jstrans = function (path) {
     if (typeof path === 'undefined') {
         return null;
     }
-    
-    if (selector = document.querySelector('input[name=\"jstrans-value-for-' + path + '\"]')) {
+    var selector = document.querySelector('input[name=\"jstrans-value-for-' + path + '\"]');
+    if (selector) {
         return selector.value;
     } else {
         var json = %s;
@@ -20,4 +20,4 @@ var jstrans = function (path) {
         
         return value;
     }
-}
+};
